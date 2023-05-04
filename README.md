@@ -35,3 +35,7 @@ To run the script use:
 ```
 
 you can redirect the output to a file with the ```-o``` option and select only the first "n" subdomains of a file with the ```-n``` option.
+
+### Links
+
+For some useful subdomains list check https://github.com/rbsec/dnscan.git
