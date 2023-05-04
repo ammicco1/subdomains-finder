@@ -37,7 +37,7 @@ for opt, arg in opts:
         outfile = arg
         of = open(outfile, "w")
     if opt in ["-n", "--number"]:
-        max = arg
+        m = arg
 
 if len(args) == 0:
     __Usage__()
@@ -47,8 +47,11 @@ hostname = args[0]
 
 if filename != "":
     f = open(filename, "r")
+    i = 0
 
     for index, subdomains in enumerate(f):
+        i += 1
+
         sub = subdomains.replace("\n", "");
 
         if __ping(sub + "." + hostname) == 0:
@@ -61,6 +64,9 @@ if filename != "":
             of.write("\n")
         else:
             print(s)
+
+        if i == int(m):
+            break
 
     f.close()
 else:
